@@ -2,6 +2,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Experimental_CssVarsProvider as CssVarsProvider } from '@mui/material/styles';
 import type {} from '@mui/material/themeCssVarsAugmentation';
+import { Analytics } from '@vercel/analytics/react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import createEmotionCache from '../src/createEmotionCache';
@@ -25,6 +26,7 @@ export default function MyApp(props: MyAppProps) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Component {...pageProps} />
+        <Analytics />
       </CssVarsProvider>
     </CacheProvider>
   );
